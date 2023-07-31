@@ -23,13 +23,13 @@
 <meta property="og:site_name" content="Nostalgia&#39;s Blog">
 <meta property="og:description" content="施工中, 尚未完成">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="e:%5CBlog%5Csource_posts%5C%E5%90%8E%E7%BC%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%5Cd1y1au4x.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/d1y1au4x.png">
 <meta property="article:published_time" content="2023-07-31T07:26:14.000Z">
-<meta property="article:modified_time" content="2023-07-31T12:51:32.000Z">
+<meta property="article:modified_time" content="2023-07-31T13:38:04.000Z">
 <meta property="article:author" content="Nostalgia">
 <meta property="article:tag" content="后缀数据结构">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="e:%5CBlog%5Csource_posts%5C%E5%90%8E%E7%BC%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%5Cd1y1au4x.png">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/d1y1au4x.png">
   
   
   
@@ -243,7 +243,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          2.9k 字
         
       </span>
     
@@ -338,6 +338,7 @@
 <p><strong>性质6: 两个叶节点的 LCA 对应他们所代表的后缀的 LCP</strong></p>
 <p>考虑后缀树的本质，这仍然是简单的。</p>
 <h3 id="构造">构造</h3>
+<h4 id="朴素构造">朴素构造</h4>
 <p>后缀树是反串的后缀自动机的 <code>link</code> 树，但我们仍然有一个专门的算法在线性时间内构造出后缀树，被叫做 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Ukkonen</mtext></mrow><annotation encoding="application/x-tex">\text{Ukkonen}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">Ukkonen</span></span></span></span></span> 算法。</p>
 <p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Ukkonen</mtext></mrow><annotation encoding="application/x-tex">\text{Ukkonen}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">Ukkonen</span></span></span></span></span> 算法是基于增量构造的，其可以在线性时间内构造出给定字符串的后缀树，动态维护当前前缀的<strong>后缀树局部</strong>。</p>
 <p>后缀树局部与后缀树的差别是，在后缀树中我们保留所有后缀对应的点（缩二度点），而在后缀树中，由于他们稍后可能就不是后缀了，不保留这些点。</p>
@@ -348,7 +349,7 @@
 <p>对于叶子，直接在其父亲到其的<strong>边</strong>上追加新的字符即可，我们称其为一个<strong>自然延续</strong>，因为边到其必定只有唯一的一条边。</p>
 <p>对于非叶子，如果其不在一个单独的节点中，所以我们不能延续，就需要拆点来构造出</p>
 <p>这里借用 ix35 的图</p>
-<p><img src="E:%5CBlog%5Csource_posts%5C%E5%90%8E%E7%BC%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%5Cd1y1au4x.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/d1y1au4x.png" srcset="/img/loading.gif" lazyload alt></p>
 <p>假设原来的后缀树上有一条边 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>abc</mtext></mrow><annotation encoding="application/x-tex">\text{abc}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">abc</span></span></span></span></span>，那么在加入一个新形成的后缀 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>…</mo><mtext>abd</mtext></mrow><annotation encoding="application/x-tex">\ldots \text{abd}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">abd</span></span></span></span></span> 的影响后。显然 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>…</mo><mtext> abd</mtext></mrow><annotation encoding="application/x-tex">\ldots\text{ abd}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord"> abd</span></span></span></span></span> 与 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>…</mo><mtext>abc</mtext></mrow><annotation encoding="application/x-tex">\ldots \text{abc}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">abc</span></span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Startpos</mtext></mrow><annotation encoding="application/x-tex">\text{Startpos}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Startpos</span></span></span></span></span> 集合是不同的(子串不同)，那么我们就要分裂这个节点。</p>
 <p>为了找出这些节点，考虑有哪些后缀是无法自然延续的，假设当前插入的节点是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>r</mi><mi>e</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Pre(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">re</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span>，若后缀 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo stretchy="false">[</mo><mi>y</mi><mo>…</mo><mi>x</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">S[y\ldots x]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">x</span><span class="mclose">]</span></span></span></span> 不是叶子，那么后缀 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo stretchy="false">[</mo><mi>y</mi><mo>+</mo><mn>1</mn><mo>…</mo><mi>x</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">S[y+1\ldots x]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">x</span><span class="mclose">]</span></span></span></span> 也不是一个叶子，因为后者有前者的所有转移。</p>
 <p>这个性质非常美妙，意味着我们只用考虑所有长度不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span> 的后缀。</p>
@@ -363,6 +364,8 @@
 </li>
 </ol>
 <p>但这样每次我们都要从根出发，向下寻找并不断插入。复杂度是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 的。注意到复杂度瓶颈是每次从根往下找，考虑优化这个过程。</p>
+<h4 id="后缀链接">后缀链接</h4>
+<p>对后缀树上的每个节点，我们维护一个后缀链接 <code>link</code>，表示其一个真后缀对应的节点</p>
 <h2 id="后缀数组-Suffix-Array">后缀数组(Suffix Array)</h2>
 <h2 id="后缀自动机-Suffix-Automaton">后缀自动机(Suffix Automaton)</h2>
 <h2 id="参考资料">参考资料</h2>
