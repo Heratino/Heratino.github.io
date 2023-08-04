@@ -16,21 +16,26 @@
   <meta name="author" content="Nostalgia">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="SPOJ DIVCNT3 Counting Divisors (cube)">
-<meta property="og:url" content="https://senex-nostalgia.github.io/2023/08/01/SPOJ-DIVCNT3-Counting-Divisors-cube/index.html">
+    <meta name="description" content="网络流, 上下界可行流, 贪心">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CF704D Captain America">
+<meta property="og:url" content="https://senex-nostalgia.github.io/2023/08/03/CF704D-Captain-America/index.html">
 <meta property="og:site_name" content="Nostalgia&#39;s Blog">
+<meta property="og:description" content="网络流, 上下界可行流, 贪心">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-01T11:38:06.000Z">
-<meta property="article:modified_time" content="2023-08-03T14:30:26.000Z">
+<meta property="article:published_time" content="2023-08-03T14:16:05.000Z">
+<meta property="article:modified_time" content="2023-08-03T14:47:00.000Z">
 <meta property="article:author" content="Nostalgia">
+<meta property="article:tag" content="网络流">
+<meta property="article:tag" content="上下界可行流">
+<meta property="article:tag" content="贪心">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Serif+SC:wght@300;400&family=Ubuntu+Mono&display=swap" rel="stylesheet">
   
-  <title>SPOJ DIVCNT3 Counting Divisors (cube) - Nostalgia&#39;s Blog</title>
+  <title>CF704D Captain America - Nostalgia&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="SPOJ DIVCNT3 Counting Divisors (cube)"></span>
+            <span id="subtitle" data-typed-text="CF704D Captain America"></span>
           
         </div>
 
@@ -226,8 +231,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-01 19:38" pubdate>
-          2023年8月1日 晚上
+        <time datetime="2023-08-03 22:16" pubdate>
+          2023年8月3日 晚上
         </time>
       </span>
     
@@ -238,7 +243,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          157 字
         
       </span>
     
@@ -249,7 +254,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -290,12 +295,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">SPOJ DIVCNT3 Counting Divisors (cube)</h1>
+            <h1 id="seo-header">CF704D Captain America</h1>
             
             
               <div class="markdown-body">
                 
-                
+                <h1>CF704D Captain America</h1>
+<h2 id="题意简述">题意简述</h2>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个点，第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 个坐标为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x_i, y_i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>.<br>
+要给点涂色，给一个点涂成红色需要 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span> 代价，蓝需要 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span> 代价。<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> 个<br>
+限制，形如某行或某列两种颜色个数差不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>。<br>
+求一个方案使得总代价最少。<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>q</mi><mo>≤</mo><mn>105</mn></mrow><annotation encoding="application/x-tex">n, q ≤ 105</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">105</span></span></span></span></p>
+
                 
               </div>
             
@@ -303,6 +314,45 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%9B%BE%E8%AE%BA/" class="category-chain-item">图论</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%9B%BE%E8%AE%BA/%E7%BD%91%E7%BB%9C%E6%B5%81/" class="category-chain-item">网络流</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" class="print-no-link">#网络流</a>
+      
+        <a href="/tags/%E4%B8%8A%E4%B8%8B%E7%95%8C%E5%8F%AF%E8%A1%8C%E6%B5%81/" class="print-no-link">#上下界可行流</a>
+      
+        <a href="/tags/%E8%B4%AA%E5%BF%83/" class="print-no-link">#贪心</a>
+      
+    </div>
   
 </div>
 
@@ -312,8 +362,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>SPOJ DIVCNT3 Counting Divisors (cube)</div>
-      <div>https://senex-nostalgia.github.io/2023/08/01/SPOJ-DIVCNT3-Counting-Divisors-cube/</div>
+      <div>CF704D Captain America</div>
+      <div>https://senex-nostalgia.github.io/2023/08/03/CF704D-Captain-America/</div>
     </div>
     <div class="license-meta">
       
@@ -325,7 +375,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年8月1日</div>
+          <div>2023年8月3日</div>
         </div>
       
       
@@ -357,9 +407,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/01/P4764&amp;P6246-%E9%82%AE%E5%B1%80/" title="P4764&amp;P6246 邮局">
+                      <a href="/2023/08/04/2023%E5%B9%B408%E6%9C%8804%E6%97%A5%E9%B2%9C%E8%8A%B1/" title="2023年08月04日鲜花">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">P4764&amp;P6246 邮局</span>
+                        <span class="hidden-mobile">2023年08月04日鲜花</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -367,8 +417,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/01/CF1552H-Guess-the-Perimeter/" title="CF1552H Guess the Perimeter">
-                        <span class="hidden-mobile">CF1552H Guess the Perimeter</span>
+                      <a href="/2023/08/03/1st-UCup21-Stage21-Shandong-J/" title="1st UCup21. Stage21:Shandong J. Triangle City">
+                        <span class="hidden-mobile">1st UCup21. Stage21:Shandong J. Triangle City</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
