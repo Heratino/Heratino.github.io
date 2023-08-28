@@ -24,7 +24,7 @@
 <meta property="og:description" content="Kruskal, 并查集">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-23T08:42:08.000Z">
-<meta property="article:modified_time" content="2023-08-23T10:30:42.000Z">
+<meta property="article:modified_time" content="2023-08-26T03:49:28.000Z">
 <meta property="article:author" content="Nostalgia">
 <meta property="article:tag" content="Kruskal">
 <meta property="article:tag" content="并查集">
@@ -253,7 +253,7 @@
         
         
         
-          23 分钟
+          22 分钟
         
       </span>
     
@@ -312,7 +312,7 @@
 <p>此时所有联通块组成一个森林，假设我们加入某一条边 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 后，整个图组成了环，那么此时图中一定只有一个简单环，将环上任意一条边替换为当前边是不影响连通性的。</p>
 <p>假设加入某一条边 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 后图不形成环，那么边 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 就一定会被加入，但可能在后面会被替换掉。所以如果我们在加入 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">&lt;w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span></span></span></span> 的所有边后整个图连通性一定，那么加入所有权值为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span></span></span></span> 的边后连通性仍然是一定的。</p>
 <p>而一条边都不加的情况连通性一定是任意两点不联通，证毕。</p>
-<p>或者，理解成**加完小于某种权值的边，整张图的连通性(要求合法)<strong>与</strong>把所有小于某种权值的边都加进去(不论是否合法)**整张图的连通性相同就行了。两者是相同的。</p>
+<p>或者，理解成 <strong>加完小于某种权值的边，整张图的连通性(要求合法)<strong>与</strong>把所有小于某种权值的边都加进去(不论是否合法)</strong> 整张图的连通性相同就行了。两者是相同的。</p>
 <p>既然我们有了这个性质，我们每次询问，把所有权值不同的边分开考虑即可。</p>
 <p>对于每条边 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>，预处理出在加入所有边权比 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 小的边后，第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 条边所在联通块。每次只操作预处理的联通块就是对的。</p>
 <h2 id="代码">代码</h2>
