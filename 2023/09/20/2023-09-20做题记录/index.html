@@ -16,15 +16,15 @@
   <meta name="author" content="Nostalgia">
   <meta name="keywords" content="">
   
-    <meta name="description" content="The 2022 ICPC Asia Hong Kong Regional Contest">
+    <meta name="description" content="2023-09-20做题记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="XCPC 乱做">
-<meta property="og:url" content="https://senex-nostalgia.github.io/2023/09/12/XCPC-%E4%B9%B1%E5%81%9A/index.html">
+<meta property="og:title" content="2023-09-20做题记录">
+<meta property="og:url" content="https://senex-nostalgia.github.io/2023/09/20/2023-09-20%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Nostalgia&#39;s Blog">
-<meta property="og:description" content="The 2022 ICPC Asia Hong Kong Regional Contest">
+<meta property="og:description" content="2023-09-20做题记录">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-11T23:00:35.000Z">
-<meta property="article:modified_time" content="2023-09-12T14:15:16.647Z">
+<meta property="article:published_time" content="2023-09-20T10:58:37.000Z">
+<meta property="article:modified_time" content="2023-09-20T14:44:30.762Z">
 <meta property="article:author" content="Nostalgia">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -32,7 +32,7 @@
   
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Serif+SC:wght@300;400&family=Ubuntu+Mono&display=swap" rel="stylesheet">
   
-  <title>XCPC 乱做 - Nostalgia&#39;s Blog</title>
+  <title>2023-09-20做题记录 - Nostalgia&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="XCPC 乱做"></span>
+            <span id="subtitle" data-typed-text="2023-09-20做题记录"></span>
           
         </div>
 
@@ -228,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-12 07:00" pubdate>
-          2023年9月12日 早上
+        <time datetime="2023-09-20 18:58" pubdate>
+          2023年9月20日 晚上
         </time>
       </span>
     
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          38 字
+          756 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          1 分钟
+          7 分钟
         
       </span>
     
@@ -292,12 +292,34 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">XCPC 乱做</h1>
+            <h1 id="seo-header">2023-09-20做题记录</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="The-2022-ICPC-Asia-Hong-Kong-Regional-Contest"><a target="_blank" rel="noopener" href="https://qoj.ac/contest/1099">The 2022 ICPC Asia Hong Kong Regional Contest</a></h2>
+                <h1>2023-09-20做题记录</h1>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/643/F">CF643F. Bears and Juice</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4456">P4456 [CQOI2018] 交错序列</a></li>
+<li><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/840/C">CF840C. On the Bench</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P6378">P6378 [PA2010] Riddle</a></li>
+</ul>
+<h2 id="CF643F-Bears-and-Juice">CF643F. Bears and Juice</h2>
+<p>信息论题？</p>
+<p>其实用信息论的角度去思考这道题也是比较自然的做法，因为题目给的自由度非常大，所以考虑通过一次询问你最多能获得多少信息是一个不错的做法。</p>
+<p>其实我觉得这个东西非常类似于交互……只是因为可以构造的数太大了所以才没有这么做。</p>
+<p>就是这种，每次询问你可以获得一些信息的题目，问最小化询问次数 / 最多能问出来多少信息，可以直接往信息论上想。</p>
+<h2 id="P4456-CQOI2018-交错序列">P4456 [CQOI2018] 交错序列</h2>
+<p>连用两次二项式定理展开。</p>
+<p>比较核心的问题是需要注意到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">x+y=n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 这一点，然后把式子变成只有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 和常数的形式，因为事实告诉我们变量越多，总是越不好控制，因为这要多一维。<strong>只要有变量和其他变量/常量</strong>构成等式，我们总是希望把这个量用其他量表示出来，因为这可以减一维。</p>
+<p>更适合宝宝的矩阵快速幂：矩阵项 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">A_{i,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> 表示的是第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span> 项对第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 项的贡献。</p>
+<h2 id="CF840C-On-the-Bench">CF840C. On the Bench</h2>
+<p>加训数数。。</p>
+<p>首先考场上完全没想到这个完全平方数的性质，所以在 DP 的时候考虑去维护加入一个数的影响时不得不考虑与相邻其他数会不会构成完全平方数。但是有这个完全平方数的性质，这个影响就好维护得多，每次考虑加入一段，段内的贡献自己考虑，这就不会因为可能的加入一个数之后减少相邻导致没法计算答案了。</p>
+<p>有时候发现相互干涉的量太多要么全记下来，要么一定有些性质可以分离。通常来说后者会比较关键，因为前者几乎没法优化。</p>
+<p>感觉还是做得不够多。</p>
+<h2 id="P6378-PA2010-Riddle">P6378 [PA2010] Riddle</h2>
+<p>前缀优化建图，这个思路感觉还是非常不错。学会了新的技能。</p>
 
                 
               </div>
@@ -321,7 +343,7 @@
   
     <span>></span>
     
-  <a href="/categories/%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/VP/" class="category-chain-item">VP</a>
+  <a href="/categories/%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/2023-09/" class="category-chain-item">2023-09</a>
   
   
 
@@ -343,8 +365,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>XCPC 乱做</div>
-      <div>https://senex-nostalgia.github.io/2023/09/12/XCPC-乱做/</div>
+      <div>2023-09-20做题记录</div>
+      <div>https://senex-nostalgia.github.io/2023/09/20/2023-09-20做题记录/</div>
     </div>
     <div class="license-meta">
       
@@ -356,7 +378,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年9月12日</div>
+          <div>2023年9月20日</div>
         </div>
       
       
@@ -388,9 +410,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/14/P5398-Ynoi2018-GOSICK/" title="P5398 [Ynoi2018] GOSICK">
+                      <a href="/2023/09/20/P4456-CQOI2018-%E4%BA%A4%E9%94%99%E5%BA%8F%E5%88%97/" title="P4456 [CQOI2018] 交错序列">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">P5398 [Ynoi2018] GOSICK</span>
+                        <span class="hidden-mobile">P4456 [CQOI2018] 交错序列</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -398,8 +420,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/11/P8867-NOIP2022-%E5%BB%BA%E9%80%A0%E5%86%9B%E8%90%A5/" title="P8867 [NOIP2022] 建造军营">
-                        <span class="hidden-mobile">P8867 [NOIP2022] 建造军营</span>
+                      <a href="/2023/09/20/CF840C-On-the-Bench/" title="CF840C On the Bench">
+                        <span class="hidden-mobile">CF840C On the Bench</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
