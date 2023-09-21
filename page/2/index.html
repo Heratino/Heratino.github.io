@@ -542,7 +542,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/09/11/CF526F-Pudding-Monsters/" target="_self">
         <div>
-          CF526F. Pudding Monsters 简要题意 给你一个排列，问有多少个区间可以被重排成值域上连续的一段。 题解 考虑按右端点扫描线，最大最小值用单调栈维护。 那么我们要的就是求有多少个区间满足 max⁡i=lrai−min⁡i=lrai=r−l\max_{i=l}^{r}a_i-\min_{i=l}^{r}a_i= r - l \nonumber i=lmaxr​ai​−i=lmin
+          单调栈, 线段树
         </div>
       </a>
 
@@ -556,6 +556,15 @@
           </div>
         
         
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
+            
+              <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/">#单调栈</a>
+            
+          </div>
         
       </div>
     </article>
@@ -575,7 +584,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/09/10/CF521D-Shop/" target="_self">
         <div>
-          CF521D Shop 题解 首先使用顺序一定是先 111 类，再 222 类，再 333 类。 因为这样总是能带来更大的收益，证明只要调整就行了。 通过对每个位置只保留最大的，可以把 111 类转化为加法。 考虑再把加法转化为乘法，对每个位置的加法一定是按从大到小顺序进行的，所以先从大到小排，而加了 vvv 会使值 www 变大 v+ww\dfrac{v+w}{w} \nonumber wv+w
+          思维
         </div>
       </a>
 
@@ -709,7 +718,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/09/07/CF505E-Mr-Kitayuta-vs-Bamboos/" target="_self">
         <div>
-          CF505E. Mr. Kitayuta vs. Bamboos 题解 首先显然要二分答案，不妨假设当前二分的答案是 HHH，那么问题就变成有 nnn 个数 h1,⋯ ,nh_{1,\cdots,n}h1,⋯,n​，每轮先选 kkk 个数使其变为 max⁡(hi−p,0)\max(h_i-p,0)max(hi​−p,0)，在令每个 iii 的 hi=hi+aih_i=h_i+a_ihi​=hi​+
+          思维
         </div>
       </a>
 
