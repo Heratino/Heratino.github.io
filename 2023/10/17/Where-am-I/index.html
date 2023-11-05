@@ -16,25 +16,23 @@
   <meta name="author" content="Nostalgia">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Interactive, 二分">
+    <meta name="description" content="Where am I 感觉最近不知道在干点啥，天天把计划往备忘录里丢也不做。于是写出来省得每次想起来都重新写一下。  LOJ 比赛题。（LOJ β\betaβ Round 1-5） CF **2100 - 2600。 AtCoder 板刷。 模拟赛。 XCPC。（CCPC22绵阳，CCPC22Final，CCPC23 Online，CCPC23 秦皇岛）  多做点自己可能能做出来但是没做出来的。尽">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AT_agc044_d Guess the Password">
-<meta property="og:url" content="https://senex-nostalgia.github.io/2023/10/05/AT-agc044-d-Guess-the-Password/index.html">
+<meta property="og:title" content="Where am I?">
+<meta property="og:url" content="https://senex-nostalgia.github.io/2023/10/17/Where-am-I/index.html">
 <meta property="og:site_name" content="Nostalgia&#39;s Blog">
-<meta property="og:description" content="Interactive, 二分">
+<meta property="og:description" content="Where am I 感觉最近不知道在干点啥，天天把计划往备忘录里丢也不做。于是写出来省得每次想起来都重新写一下。  LOJ 比赛题。（LOJ β\betaβ Round 1-5） CF **2100 - 2600。 AtCoder 板刷。 模拟赛。 XCPC。（CCPC22绵阳，CCPC22Final，CCPC23 Online，CCPC23 秦皇岛）  多做点自己可能能做出来但是没做出来的。尽">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-05T06:33:51.000Z">
-<meta property="article:modified_time" content="2023-10-05T09:44:13.260Z">
+<meta property="article:published_time" content="2023-10-17T10:40:59.000Z">
+<meta property="article:modified_time" content="2023-10-18T01:17:58.782Z">
 <meta property="article:author" content="Nostalgia">
-<meta property="article:tag" content="Interactive">
-<meta property="article:tag" content="二分">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Serif+SC:wght@300;400&family=Ubuntu+Mono&display=swap" rel="stylesheet">
   
-  <title>AT_agc044_d Guess the Password - Nostalgia&#39;s Blog</title>
+  <title>Where am I? - Nostalgia&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="AT_agc044_d Guess the Password"></span>
+            <span id="subtitle" data-typed-text="Where am I?"></span>
           
         </div>
 
@@ -230,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-05 14:33" pubdate>
-          2023年10月5日 下午
+        <time datetime="2023-10-17 18:40" pubdate>
+          2023年10月17日 晚上
         </time>
       </span>
     
@@ -242,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          264 字
+          248 字
         
       </span>
     
@@ -294,17 +292,22 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">AT_agc044_d Guess the Password</h1>
+            <h1 id="seo-header">Where am I?</h1>
             
             
               <div class="markdown-body">
                 
-                <h1>AT_agc044_d Guess the Password</h1>
-<h2 id="题解">题解</h2>
-<p>首先我们要知道每个颜色的数量，这会占用我们 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Σ</mi><mi mathvariant="normal">∣</mi><mo>=</mo><mn>62</mn></mrow><annotation encoding="application/x-tex">|\Sigma|=62</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣Σ∣</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">62</span></span></span></span> 次询问。</p>
-<p>接下来我们考虑编辑距离的性质，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">dis</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>S</mi><mo separator="true">,</mo><mi>T</mi><mo stretchy="false">)</mo><mo>=</mo><mi mathvariant="normal">∣</mi><mi>T</mi><mi mathvariant="normal">∣</mi><mo>−</mo><mi mathvariant="normal">∣</mi><mi>S</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">\operatorname{dis}(S,T)=|T|-|S|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">dis</span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord">∣</span></span></span></span> 当且仅当 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span> 为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span> 的子序列。</p>
-<p>在我们询问出每种颜色之后，一个长度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>o</mi><msub><mi>l</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">col_c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord mathnormal">co</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，字符只有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span></span></span></span> 的字符串一定是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span> 所有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span></span></span></span> 组成的子序列。</p>
-<p>然后我们把所有这样的纯色子序列逐个归并就是答案，具体的，假设</p>
+                <h1>Where am I</h1>
+<p>感觉最近不知道在干点啥，天天把计划往备忘录里丢也不做。于是写出来省得每次想起来都重新写一下。</p>
+<ol>
+<li>LOJ 比赛题。（LOJ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span> Round 1-5）</li>
+<li>CF **<em>2100 - <em>2600</em></em>。</li>
+<li>AtCoder 板刷。</li>
+<li>模拟赛。</li>
+<li>XCPC。（CCPC22绵阳，CCPC22Final，CCPC23 Online，CCPC23 秦皇岛）</li>
+</ol>
+<p>多做点自己<strong>可能能做出来但是没做出来的</strong>。尽量 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mtext>h</mtext></mrow><annotation encoding="application/x-tex">1\text{h}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">1</span><span class="mord text"><span class="mord">h</span></span></span></span></span> 内一道 CF。</p>
+<p>目标可能是一个月后能够在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>45</mn><mtext>min</mtext></mrow><annotation encoding="application/x-tex">45\text{min}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6679em;"></span><span class="mord">45</span><span class="mord text"><span class="mord">min</span></span></span></span></span> 左右一道CF。模拟赛把题补完。</p>
 
                 
               </div>
@@ -313,36 +316,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E4%BA%A4%E4%BA%92/" class="category-chain-item">交互</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Interactive/" class="print-no-link">#Interactive</a>
-      
-        <a href="/tags/%E4%BA%8C%E5%88%86/" class="print-no-link">#二分</a>
-      
-    </div>
   
 </div>
 
@@ -352,8 +325,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>AT_agc044_d Guess the Password</div>
-      <div>https://senex-nostalgia.github.io/2023/10/05/AT-agc044-d-Guess-the-Password/</div>
+      <div>Where am I?</div>
+      <div>https://senex-nostalgia.github.io/2023/10/17/Where-am-I/</div>
     </div>
     <div class="license-meta">
       
@@ -365,7 +338,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月5日</div>
+          <div>2023年10月17日</div>
         </div>
       
       
@@ -397,9 +370,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/07/AT-agc037-d-Sorting-a-Grid/" title="AT_agc037_d Sorting a Grid">
+                      <a href="/2023/10/26/%E8%AE%A1%E6%95%B0%E6%9D%82%E8%B0%88/" title="计数杂谈">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">AT_agc037_d Sorting a Grid</span>
+                        <span class="hidden-mobile">计数杂谈</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -407,8 +380,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/10/03/AT-arc065-d-Shuffling/" title="AT_arc065_d Shuffling">
-                        <span class="hidden-mobile">AT_arc065_d Shuffling</span>
+                      <a href="/2023/10/07/AT-agc037-d-Sorting-a-Grid/" title="AT_agc037_d Sorting a Grid">
+                        <span class="hidden-mobile">AT_agc037_d Sorting a Grid</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
