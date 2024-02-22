@@ -16,24 +16,24 @@
   <meta name="author" content="Nostalgia">
   <meta name="keywords" content="">
   
-    <meta name="description" content="CDQ分治">
+    <meta name="description" content="喵了个喵">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CF1458F Range Diameter Sum">
-<meta property="og:url" content="https://senex-nostalgia.github.io/2023/09/22/CF1458F-Range-Diameter-Sum/index.html">
+<meta property="og:title" content="P8866 [NOIP2022] 喵了个喵">
+<meta property="og:url" content="https://senex-nostalgia.github.io/2023/11/11/P8866-NOIP2022-%E5%96%B5%E4%BA%86%E4%B8%AA%E5%96%B5/index.html">
 <meta property="og:site_name" content="Nostalgia&#39;s Blog">
-<meta property="og:description" content="CDQ分治">
+<meta property="og:description" content="喵了个喵">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-22T02:20:48.000Z">
-<meta property="article:modified_time" content="2023-09-22T03:04:13.230Z">
+<meta property="article:published_time" content="2023-11-11T03:37:23.000Z">
+<meta property="article:modified_time" content="2023-11-15T01:25:12.918Z">
 <meta property="article:author" content="Nostalgia">
-<meta property="article:tag" content="CDQ分治">
+<meta property="article:tag" content="Constructive">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Serif+SC:wght@300;400&family=Ubuntu+Mono&display=swap" rel="stylesheet">
   
-  <title>CF1458F Range Diameter Sum - Nostalgia&#39;s Blog</title>
+  <title>P8866 [NOIP2022] 喵了个喵 - Nostalgia&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="CF1458F Range Diameter Sum"></span>
+            <span id="subtitle" data-typed-text="P8866 [NOIP2022] 喵了个喵"></span>
           
         </div>
 
@@ -229,8 +229,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-22 10:20" pubdate>
-          2023年9月22日 上午
+        <time datetime="2023-11-11 11:37" pubdate>
+          2023年11月11日 中午
         </time>
       </span>
     
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          320 字
+          515 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          3 分钟
+          5 分钟
         
       </span>
     
@@ -293,16 +293,33 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">CF1458F Range Diameter Sum</h1>
+            <h1 id="seo-header">P8866 [NOIP2022] 喵了个喵</h1>
             
             
               <div class="markdown-body">
                 
-                <h1>CF1458F Range Diameter Sum</h1>
+                <h1>[NOIP2022] 喵了个喵</h1>
 <h2 id="题解">题解</h2>
-<p>首先考虑 CDQ 分治。</p>
-<p>每次选一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow><annotation encoding="application/x-tex">\mathrm{mid}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathrm">mid</span></span></span></span></span> 把区间分成两半然后统计 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>l</mi><mo separator="true">,</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow><mo stretchy="false">]</mo><mo>∪</mo><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow><mo separator="true">,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">[l,\mathrm{mid}]\cup (\mathrm{mid},i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathrm">mid</span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathrm">mid</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">i</span><span class="mclose">)</span></span></span></span> 对 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 的贡献，再把 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 并进区间里。递归右子区间的时候把所有影响撤销即可。</p>
-<p>那么我们需要维护一个数据结构，支持 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 或者 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> 插入删除一个点，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 或者 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> 查询一个点到点集所有点的最大值。</p>
+<h3 id="Subtask-1">Subtask 1</h3>
+<p>首先这个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn><mi>n</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k=2n-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 还是非常菜的。</p>
+<p>给最后一个栈留空以便消除底部，而顶部重复可以直接放在上面。</p>
+<h3 id="其余-Subtask">其余 Subtask</h3>
+<p>考虑 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k=2n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>。</p>
+<p>那么重点其实是剩下的一种颜色放在哪里。</p>
+<p>我们知道一个事情是总希望</p>
+<ul>
+<li>留出一个空栈。</li>
+<li>每个栈颜色不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 种。</li>
+</ul>
+<p>我们对剩下的颜色有两个做法，一个是放在空栈里，另一个是放在其他栈上。</p>
+<p>如果我们放到空栈，可能导致的结果是后面的操作没法消掉下面的。</p>
+<p>如果我们放到其他栈上，可能导致的结果是后面的操作没法消掉这个栈<strong>原来的顶端</strong>。</p>
+<p>规定原来的入栈顺序这件事情显然不好做，那么我们来考虑所有栈底元素下一次出现的位置，和自己的出现的位置。</p>
+<p>如果自己早于任何一个栈底元素出现，那么放到空栈里。</p>
+<p>那么一个直觉的想法告诉我们放到第一次出现的栈底元素上。但是这可能导致一个问题就是这个栈底元素顶上的元素可能没法被消掉。</p>
+<p>继续解决这个问题。如果它顶上的元素出现在自己之前出现的次数为偶数，可以随便解决。</p>
+<p>否则，如果是奇数。就把它插入空栈。从栈顶消下来，奇数个元素恰好消掉上面的，然后就可以把栈底消掉。</p>
+<p>这为啥能对呢因为你找的是第一个栈底的。前面的都是消栈顶。</p>
 
                 
               </div>
@@ -311,11 +328,39 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9D%82%E9%A2%98/" class="category-chain-item">杂题</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%9D%82%E9%A2%98/%E6%80%9D%E7%BB%B4%E9%A2%98/" class="category-chain-item">思维题</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/CDQ%E5%88%86%E6%B2%BB/" class="print-no-link">#CDQ分治</a>
+        <a href="/tags/Constructive/" class="print-no-link">#Constructive</a>
       
     </div>
   
@@ -327,8 +372,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>CF1458F Range Diameter Sum</div>
-      <div>https://senex-nostalgia.github.io/2023/09/22/CF1458F-Range-Diameter-Sum/</div>
+      <div>P8866 [NOIP2022] 喵了个喵</div>
+      <div>https://senex-nostalgia.github.io/2023/11/11/P8866-NOIP2022-喵了个喵/</div>
     </div>
     <div class="license-meta">
       
@@ -340,7 +385,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年9月22日</div>
+          <div>2023年11月11日</div>
         </div>
       
       
@@ -372,9 +417,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/22/LOJ-553-%E3%80%8CLibreOJ-Round-8%E3%80%8DMINIM/" title="LOJ#553. 「LibreOJ Round 8」MINIM">
+                      <a href="/2023/11/11/%E6%AF%94%E8%B5%9Btips/" title="比赛tips">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LOJ#553. 「LibreOJ Round 8」MINIM</span>
+                        <span class="hidden-mobile">比赛tips</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -382,8 +427,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/21/P7058-gym100801K-NWRRC2015-Kingdom-Trip/" title="P7058 &amp; gym100801K [NWRRC2015] Kingdom Trip">
-                        <span class="hidden-mobile">P7058 &amp; gym100801K [NWRRC2015] Kingdom Trip</span>
+                      <a href="/2023/11/05/P9527-JOISC2022-%E6%B4%92%E6%B0%B4%E5%99%A8/" title="P9527 [JOISC2022] 洒水器">
+                        <span class="hidden-mobile">P9527 [JOISC2022] 洒水器</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
