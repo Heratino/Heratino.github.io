@@ -31,7 +31,13 @@
   
   
   
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Serif+SC:wght@300;400&family=Ubuntu+Mono&display=swap" rel="stylesheet"> <link rel="stylesheet" href="https://registry.npmmirror.com/lxgw-wenkai-screen-web/latest/files/style.min.css" /> <link href="https://fonts.googleapis.com/css2?family=Quando&display=swap" rel="stylesheet"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Serif+SC:wght@300;400&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://registry.npmmirror.com/lxgw-wenkai-screen-web/latest/files/style.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Quando&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   
   <title>杂物箱 - Nelofus&#39;s Blog</title>
 
@@ -44,6 +50,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
 
 
 
@@ -473,7 +481,6 @@
 
 
 
-
     
 
     
@@ -678,55 +685,6 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-                inlineMath: [["\(", "\)"]],
-                displayMath: [
-                    ['$$', '$$'],
-                    ["\[", "\]"],
-                ],
-                processEscapes: true,
-                processEnvironments: true
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
-
   <script  src="/js/local-search.js" ></script>
 
 
@@ -743,37 +701,5 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<!--
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
--->
-
-<script>
-  MathJax = {
-    loader: { load: ['input/tex', 'output/chtml', 'input/mml', 'input/asciimath'] },
-    tex: { 
-      inlineMath: [['
-</html>
-, '
-</html>
-], ['\\(', '\\)']],
-      displayMath: [['$', '$'], ['\\[', '\\]']]
-    },
-  };
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js"></script>
 </body>
 </html>
